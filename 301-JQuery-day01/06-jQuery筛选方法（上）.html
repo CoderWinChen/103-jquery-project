@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    <div class="yeye">
+        <div class="father">
+            <div class="son">儿子</div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <p>我是屁</p>
+        <div>
+            <p>我是p</p>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            // 拿到son的父元素，类似于js的查找元素节点
+            console.log($('.son').parent());
+            
+            // 子，类似于js的子代选择器，.nav > p
+            $('.nav').children('p').css('color','red')
+            //后代，类似于js的后代选择器 .nav p 
+            $('.nav').find('p').css('color','green')
+        })
+    </script>
+</body>
+
+</html>

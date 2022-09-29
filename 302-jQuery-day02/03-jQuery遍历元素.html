@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+
+    <script>
+        let arr = ['red', 'green', 'blue']
+        // 语法一：主要用于遍历元素
+        $('div').each(function (i, item) {
+            console.log(i, item);
+            $(item).css('color', arr[i])
+        })
+
+        // 语法二：主要用于遍历数据，
+        
+        let obj = [
+            {
+                uname: '张三',
+                age: 23,
+                gender: '男'
+            },
+            {
+                uname: '李四',
+                age: 25,
+                gender: '男'
+            },
+             {
+                uname: '王五',
+                age: 25,
+                gender: '男'
+            }
+        ]
+
+        $.each(arr, function (i, item) {
+            console.log(item);
+            console.log(obj[i].uname);
+            console.log(obj[i].age);
+            console.log(obj[i].gender);
+            console.log('----');
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+
+</head>
+
+<body>
+    <div>
+        点我
+    </div>
+
+    <button>我执行多个事件</button>
+
+    <br>
+    <span>绑定多个事件执行不同代码</span>
+
+    <script>
+        // 第一种方法，只能一个一个绑定
+        $('div').click(function () {
+            console.log('gogogo');
+        })
+
+        $('div').mouseover(function () {
+            console.log('have lunch');
+        })
+
+
+        // 绑定多个事件
+        $('button').on("mouseover click",function(){
+            console.log("字符串->不同事件执行相同的代码");
+        })
+
+    
+        $('span').on({
+            click: function(){
+                console.log('我被点击了');
+            },
+            mouseover: function () {
+                console.log('我被悬停了');
+            },
+        })
+
+
+    </script>
+</body>
+
+</html>

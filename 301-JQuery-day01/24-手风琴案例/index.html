@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .hero {
+            width: 900px;
+            height: 90px;
+            margin: 100px auto;
+            background: url(./images/bg.png);
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .hero li {
+            position: relative;
+            float: left;
+            width: 69px;
+            height: 115px;
+            margin: 9px;
+        }
+
+        .hero li.current {
+            width: 224px;
+        }
+        .hero li .big {
+            display: none;
+        }
+
+        .hero li .small {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 69px;
+            height: 69px;
+        }
+
+        .hero li img {
+
+            border-radius: 5px;
+        }
+
+        .hero li.current .big {
+            display: block;
+        }
+
+        .hero li.current .small {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <ul>
+            <li class="current">
+                <a href="#">
+                    <img class="big" src="./images/c.png" alt="">
+                    <img class="small" src="./images/c1.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img class="big" src="./images/h.png" alt="">
+                    <img class="small" src="./images/h1.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img class="big" src="./images/m.png" alt="">
+                    <img class="small" src="./images/m1.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img class="big" src="./images/t.png" alt="">
+                    <img class="small" src="./images/t1.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img class="big" src="./images/w.png" alt="">
+                    <img class="small" src="./images/w1.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img class="big" src="./images/z.png" alt="">
+                    <img class="small" src="./images/z1.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img class="big" src="./images/l.png" alt="">
+                    <img class="small" src="./images/l1.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        $(function () {
+            $(".hero li").mouseenter(function () {
+
+                // 鼠标经过：当前li的宽度变大，其他li的宽度变小
+                $(this).stop().animate({
+                    width: 224
+                }, 200).find('.big').stop().fadeIn().siblings('.small').fadeOut()
+                $(this).siblings().animate({
+                    width: 69
+                }, 200).find('.big').stop().fadeOut().siblings('.small').fadeIn()
+            })
+        })
+    </script>
+</body>
+
+</html>

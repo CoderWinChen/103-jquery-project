@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    <div>你好</div>
+    <script>
+        // 自己封装一个jQuery函数
+        function $(tagName) {
+            return document.querySelector(tagName)
+        }
+
+        console.log($('div'));
+
+        // console.log($('div').text()); //冲突
+        console.log(jQuery('div').text()); //用jQuery对象代替$
+
+        // 解决方案二：用变量接收，调用jq的noConflict()方法，用变量调用jq方法
+        let jq = jQuery.noConflict()
+
+        jq('div').text('改变')
+    </script>
+</body>
+
+</html>

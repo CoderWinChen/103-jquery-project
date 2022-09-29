@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+        .product {
+            width: 800px;
+            height: 600px;
+            margin: 200px auto;
+        }
+
+        .product-hd {
+            height: 35px;
+            border: 1px solid #000;
+        }
+
+      
+        .product-hd li a{
+            display: block;
+            float: left;
+            text-align: center;
+            line-height: 35px;
+            padding: 0 20px;
+            color: #000;
+        }
+        .current {
+            color: #fff !important;
+            background-color: red;
+            
+        }
+        .item {
+            height: 500px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="product">
+        <div class="product-hd">
+            <ul>
+                <li><a href="#" class="current">商品介绍</a></li>
+                <li><a href="#">规格与包装</a></li>
+                <li><a href="#">售后保障</a></li>
+                <li><a href="#">商品评价（50000）</a></li>
+                <li><a href="#">手机社区</a></li>
+            </ul>
+        </div>
+        <div class="product-content">
+            <div class="item"  style="display: block;">
+                商品介绍模块内容
+            </div>
+            <div class="item">
+                规格与包装内容
+            </div>
+            <div class="item">
+                售后保障内容
+            </div>
+            <div class="item">
+                商品评价（50000）内容
+            </div>
+            <div class="item">
+                手机社区内容
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            // 排他思想：点击哪里背景颜色修改
+            $('.product-hd li').click(function(){
+                // 排他思想+链式编程
+                $(this).siblings().children().removeClass('current')
+                $(this).children('a').addClass('current');
+                $('.item').eq($(this).index()).show().siblings().hide()
+            })
+        })
+    </script>
+</body>
+
+</html>

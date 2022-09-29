@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+
+    <script>
+        let ul = $('<ul></ul>') //创建节点
+        ul.append('<li>我是加到内容的后面</li>') //追加到后面
+        $('body').append(ul)
+
+        ul.prepend('<li>我是加到内容的前面</li>') //追加到前面
+
+        ul.after('兄弟关系，外部后面<br>')
+        ul.before('兄弟关系，外部前面<br>')
+
+        //整个删除
+        // ul.remove()
+
+        //清空子元素
+        // ul.empty() 
+        ul.html("")
+        
+    </script>
+</body>
+
+</html>

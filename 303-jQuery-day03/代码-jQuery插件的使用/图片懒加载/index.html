@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Loading</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    html,body,#img-x{
+        height: 100%;
+    }
+    #img-x{
+        overflow-y: auto;
+        margin: 0 auto;
+    }
+    /* .img-ul{
+    } */
+    .img-ul-li{
+        margin: 10px auto;
+    }
+    .img-ul-li-img.loading{
+        background-image: url('./loading24.gif');
+        background-repeat: no-repeat;
+        background-size: 25px 25px;
+        background-position: center center;
+    }
+</style>
+<body>
+	<h3 style="text-align: center">jQuery图片懒加载</h3>
+    <div id="img-x">
+        <ul class="img-ul">
+            <li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/2.png"></li>
+            <li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/2.png"></li>
+            <li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/2.png"></li>
+            <li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/2.png"></li>
+            <li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/2.png"></li>
+            <li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/2.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/2.png"></li>
+            <li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/2.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/2.png"></li>
+            <li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/2.png"></li>
+            <li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/2.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/2.png"></li>
+            <li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+            <li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+			<li class="img-ul-li"><img class="img-ul-li-img loading" data-src="./images/7.png"></li>
+           
+        </ul>
+    </div>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery.ImgLazyLoad.min.js"></script>
+<script>
+    $(function(){
+        
+        var imgLazyLoad = $('#img-x').imgLazyLoad({
+            width: 400,
+            height: 240,
+            imgCallback: function () {
+                // console.log(this);
+            },
+            callback: function () {
+                console.log(this)
+            },
+            // scrollTrigger: false
+        });
+        
+
+        $('#img-x').imgLazyLoad(imgLazyLoad);
+    })
+    
+</script>
+</html>

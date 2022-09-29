@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+        <li>我是第4个li</li>
+    </ul>
+
+    <ol></ol>
+    <script>
+        // 事件委托给ul，实际上执行的是li
+        $('ul').on('click', 'li', function () {
+            alert($(this).index())
+        })
+
+
+        // $('ol li').click(function () {
+        //         alert('你好')
+        //     })
+        $('ol').on('click', 'li', function () {
+            alert('你好')
+        })
+
+        $('ol').append('<li>我是新添加的元素</li>')
+
+    </script>
+</body>
+
+</html>

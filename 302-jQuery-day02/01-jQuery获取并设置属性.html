@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    <a href="http://www.baidu.com">百度一下</a>
+    <input type="checkbox" name="" id="">
+    <div class="abc" data-index="1">abc</div>
+    <span>123</span>
+
+    <script>
+        $(function () {
+            console.log($('a').prop('href')); //获取元素的固有属性
+            $("input").click(function () {
+                $(this).prop("type", "text"); //修改固有属性
+            })
+
+            console.log($('div').attr("class")); //获取自定义属性
+            $('div').click(function(){
+                 $(this).attr("class", "pink"); //修改自定义属性
+            })
+            console.log($('div').attr('data-index'));
+
+            // 数据缓存，将数据存储在内存中，但是在H5看不到
+            $('span').data("uname","张三")
+            console.log($('span').data("uname"));
+            console.log($('div').data('index'));
+        })
+    </script>
+</body>
+
+</html>

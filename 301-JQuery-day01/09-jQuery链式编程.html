@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <script>
+        // 链式编程，让代码看起来更优雅
+        $(function () {
+            $('button').click(function () {
+                // $(this).css('color','red')
+                // $(this).siblings().css('color','red') 等同于下面这种
+                $(this).css('color','red').siblings().css('color','')
+            })
+        })
+    </script>
+</body>
+
+</html>

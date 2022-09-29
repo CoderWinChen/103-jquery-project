@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .father {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 100px;
+            background-color: pink;
+        }
+        .son {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+
+    <script>
+        // 获取到浏览器的距离，和父元素无关
+        console.log($('.son').offset());
+        // $('.son').offset({
+        //     top: 200,
+        //     left: 200
+        // })
+
+        // 获取当前元素到最近一级有定位的祖先元素的距离
+        console.log($('.son').position()); //10
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    <script>
+        let user = {
+
+        }
+        let obj = {
+            name: '张三',
+            age: 23,
+            gender: '男'
+        }
+        // 浅拷贝
+        $.extend(user, obj)
+        // console.log(user);
+
+        let one = {
+            id: 0
+        }
+        let two = {
+            id: 1,
+            msg:{
+                content:'good'
+            }
+        }
+        $.extend(one,two)
+
+        console.log(one); //有相同的属性会覆盖，没有会合并
+        two.msg.content = 'work hard' //浅拷贝，复杂数据类型的复制的是地址，修改一个，另一个对象会跟着改变
+
+        console.log(one);
+
+
+        let targetObj = {
+            no: '1111',
+            name: 'Andy'
+        }
+
+        let sendObj = {
+            sex:'男',
+            name:'Luxi'
+        }
+
+        $.extend(true,targetObj,sendObj) //深拷贝，复制独立一份空间
+        console.log(targetObj); 
+        sendObj.name = 'Mike' //修改了send，target不会改变
+        console.log('targetObj',targetObj); 
+        console.log('sendObj',sendObj);
+
+    </script>
+</body>
+
+</html>

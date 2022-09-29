@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+ 
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h2>ToDoList</h2>
+            <input type="search" name="" id="search" placeholder="添加ToDo">
+        </div>
+    </header>
+
+    <script type="text/html" id="temp">
+            <div class="container">
+                <ol>
+                    <h2>
+                        正在进行
+                        <span class="ing-num">{{ingNum}}</span>
+                    </h2>
+            
+                    {{if obj.done === false}}
+                    <li>
+                        <input type="checkbox" name="" id="">
+                        {{data.obj.title}}
+                        <a href="#"></a>
+                    </li>
+
+                    {{/if}}
+                </ol>
+            
+                <ul>
+                    <h2>
+                        已经完成
+                        <span class="finish-num">{{finishNum}}</span>
+                    </h2>
+                    {{if done === true}}
+                    <li>
+                        <input type="checkbox" name="" id="">
+                        {{obj.title}}
+                        <a href="#"></a>
+                    </li>
+                    {{/if}}
+                </ul>
+            </div>
+    </script>
+
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <script src="./js/myTemplate.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

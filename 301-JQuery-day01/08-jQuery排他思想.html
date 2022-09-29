@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+
+    <script>
+        $(function () {
+            // jq排他思想
+
+            // $('button').click(function () {
+            //     $(this).siblings().css('background', '')
+            //     $(this).css('background', 'pink')
+            // })
+
+            // 隐式迭代，给所有按钮绑定鼠标移动事件
+            $('button').mouseover(function(){
+                // 隐式迭代，给除了自己的兄弟元素去除背景色 【干掉所有人】
+                $(this).siblings().css('background','')
+                // 给自己添加背景色 【复活我自己】
+                $(this).css('background','pink')
+            })
+        })
+    </script>
+</body>
+
+</html>

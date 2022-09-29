@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        .box {
+            width: 80px;
+            height: 80px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+        <li>我是第4个li</li>
+    </ul>
+
+    <div class="box"></div>
+
+    <p>点我</p>
+
+    <script>
+        $('ul').on('click', 'li', function () {
+            alert('你好')
+        })
+
+        $('.box').on({
+            click:function(){
+                console.log("我被点击了");
+            },
+            mouseover: function () {
+                console.log("我被悬停了");
+            }
+        })
+
+        // 事件解绑
+        // 【解绑所有事件】
+        // $('.box').off()
+
+        // 解绑指定事件
+        $('.box').off('click')
+
+        // 解绑事件委派
+        $('ul').off('click','li')
+        
+        // 只触发一次事件
+        $('p').one('click',function(){
+            alert('我是p')
+        })
+
+
+    </script>
+</body>
+
+</html>

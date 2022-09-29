@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .nav-weibo {
+            margin: 100px;
+        }
+
+        .nav-weibo>li {
+            float: left;
+            width: 80px;
+            text-align: center;
+        }
+
+        .nav-weibo>li a {
+            display: block;
+            width: 100%;
+            height: 44px;
+            line-height: 44px;
+        }
+
+        .nav-weibo>li a:hover{
+            background-color: #ccc;
+        }
+
+        .item-weibo li a:hover{
+            background-color: #FFF5DA;
+        }
+
+    .item-weibo li {
+        border: 1px solid orange;
+        border-top: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <ul class="nav-weibo">
+        <li>
+            <a href="#">微博</a>
+            <ul class="item-weibo" style="display:none">
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+            </ul>
+
+        </li>
+        <li>
+            <a href="#">微博</a>
+            <ul class="item-weibo" style="display:none">
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+            </ul>
+
+        </li>
+        <li>
+            <a href="#">微博</a>
+            <ul class="item-weibo" style="display:none">
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">微博</a>
+            <ul class="item-weibo" style="display:none">
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        $(function(){
+            $('.nav-weibo>li').mouseover(function(){
+                $(this).children('ul').show()
+            })
+
+              $('.nav-weibo>li').mouseout(function () {
+                $(this).children('ul').hide()
+            })
+        })
+    </script>
+</body>
+
+</html>

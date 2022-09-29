@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    <!-- 亲兄弟 -->
+    <ol>
+        <a href="#">我是第1个li</a hre>
+        <a href="#">我是第2个li</a hre>
+        <a href="#">我是第3个li</a hre>
+        <a href="#">我是第4个li</a hre>
+    </ol>
+
+    <!-- 表兄弟 -->
+    <ul>
+        <li><a href="#">我是第1个li</a></li>
+        <li><a href="#">我是第2个li</a></li>
+        <li><a href="#">我是第3个li</a></li>
+        <li><a href="#">我是第4个li</a></li>
+    </ul>
+
+    <script>
+        // 注意$(this).index()仅仅适用于亲兄弟，表兄弟关系无法获取
+        $('ol').on('click', 'a', function () {
+            console.log($(this).index()); // 0 1 2 3
+        })
+
+        $('ul').on('click', 'a', function () {
+            console.log($(this).index()); //无法获取，因为ul里面的a不是亲兄弟
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <style>
+        div {
+            width: 80px;
+            height: 80px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <input type="text" name="" id="">
+    <script>
+        // 事件自动触发有三种方式
+        $('div').click(function () {
+            alert(11)
+        })
+
+        // 第一种：【元素.事件名】
+        // $('div').click()
+
+
+        // 第二种：【元素.trigger(事件名)】
+        // $('div').trigger('click')
+        // 第三种：【元素.triggerHanlder(事件名)】，会取消默认行为
+        $('div').triggerHandler('click')
+
+        $('input').on('focus', function () {
+            $(this).val('你好呀')
+        })
+
+        // $('input').focus() //不会取消默认行为
+
+        // $('input').trigger('focus')//不会取消默认行为
+
+        $('input').triggerHandler('focus')//【会取消默认行为】
+
+        
+    </script>
+</body>
+
+</html>
